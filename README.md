@@ -42,6 +42,6 @@ Replace lazy with `vim.pack`.
 
 ## LICENSE
 
-Copyright (.🄯.󱤹.) 2026 LibereCode. All Rights Reserved.
+Copyright (🄯) 2026 LibereCode. All Rights Reserved.
 Licensed under the **EUPL-1.2**.
 See [the LICENSE](./LICENSE) for details
