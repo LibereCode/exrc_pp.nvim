@@ -41,8 +41,7 @@ require("exrc_pp").setup({
 ## LICENSE
 
 <p>
-    <b>TEST<b><br>
+    Copyleft (🄯) 2026 LibereCode. All Rights Reserved.<br>
+    Licensed under the <b>EUPL-1.2</b>.<br>
+    See [the LICENSE](./LICENSE) for details.<br>
 </p>
-Copyright (🄯) 2026 LibereCode. All Rights Reserved.
-Licensed under the **EUPL-1.2**.
-See [the LICENSE](./LICENSE) for details
