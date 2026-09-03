@@ -38,10 +38,11 @@ require("exrc_pp").setup({
 
 ### lazy
 
-Replace lazy with `vim.pack`.
-
 ## LICENSE
 
+<p>
+    <b>TEST<b><br>
+</p>
 Copyright (🄯) 2026 LibereCode. All Rights Reserved.
 Licensed under the **EUPL-1.2**.
 See [the LICENSE](./LICENSE) for details
