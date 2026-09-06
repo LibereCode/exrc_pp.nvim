@@ -1,6 +1,11 @@
 local M = {}
 M._log = { iterating = {}, setup_ran = false, times_setup_ran = 0 }
 M.state = { setup_ran = false }
+---Default options (used in `setup(opts)`)
+M.opts = {
+    root_marker = ".git",
+    exrc_dir = ".nvim",
+}
 
 -- =============================================================================
 
@@ -10,11 +15,16 @@ M.state = { setup_ran = false }
 ---TODO
 ---@param opts? exrc_pp.Setup.opts Cool opts idk. See help or something? TODO
 function M.setup(opts)
+    M.opts = vim.tbl_deep_extend("force", M.opts, opts or {})
+
     if not M.state.setup_ran then
         M._log.setup_ran = true
-        for dir in vim.fs.parents(vim.api.nvim_buf_get_name(0)) do
+        M.state.setup_ran = true
+
+        for dir in vim.fs.parents(vim.env.PWD .. "/.") do
             table.insert(M._log.iterating, dir)
-            local target_nvim = dir .. "/.nvim"
+
+            local target_nvim = dir .. "/" .. M.opts.exrc_dir
             local stat, _, _ = vim.uv.fs_stat(target_nvim)
             if stat and stat.type == "directory" then
                 if vim.secure.read(target_nvim) then
@@ -23,15 +33,17 @@ function M.setup(opts)
                 end
             end
 
-            local target_root = dir .. "/.git"
+            local target_root = dir .. "/" .. M.opts.root_marker
             if vim.fn.isdirectory(target_root) == 1 then
+                print("break! found: " .. target_root)
                 table.insert(M._log, "break! found: " .. target_root)
+
                 vim.opt.runtimepath:append({ dir })
                 break
             end
         end
-        M.state.setup_ran = true
     end
+
     M._log.times_setup_ran = M._log.times_setup_ran + 1
 end
 

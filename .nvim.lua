@@ -4,7 +4,8 @@
 vim.opt.runtimepath:append({ "." }) ---Root of this repo
 
 ---INFO This simulates $XDG_CONFIG_HOME/nvim/init.lua (replaces need for above)
-local exrc_pp = require("exrc_pp")
-exrc_pp.setup()
+-- local exrc_pp = require("exrc_pp")
+-- exrc_pp.setup()
+---XXX Instead put these in ./test/*.lua somewhere, and do the tests from there
 
 -- vim: readonly
