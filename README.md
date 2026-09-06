@@ -2,6 +2,9 @@
 
 A better `exrc` for nvim: **exrc++.nvim**
 
+> [!NOTE]
+> WORK IN PROGRESS!
+
 ## ABOUT
 
 The option `vim.opt.exrc`, when true, will scan $PWD/.nvim.lua,
@@ -37,6 +40,11 @@ require("exrc_pp").setup({
 ```
 
 ### lazy
+
+```lua
+-- Rewrite your dotfiles to use `vim.pack` instead,
+-- ... or figure it out 🤷
+```
 
 ## LICENSE
 
